@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>منير عماد | IT Student</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background: #050b16;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== NAVBAR ===== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 11, 22, 0.95);
+            border-bottom: 1px solid #17243a;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4da6ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #dce7f5;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4da6ff;
+        }
+
+        /* ===== GENERAL ===== */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #8fa3bd;
+        }
+
+        /* ===== HOME ===== */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .welcome {
+            color: #4da6ff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #4da6ff;
+        }
+
+        .hero h3 {
+            font-size: 24px;
+            color: #c5d4e7;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #8fa3bd;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1677d2;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #258cf0;
+            transform: translateY(-2px);
+        }
+
+        .hero-card {
+            width: 300px;
+            min-width: 280px;
+            padding: 35px 25px;
+            background: #0b1424;
+            border: 1px solid #1d3452;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        }
+
+        .hero-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .hero-card h2 {
+            color: #4da6ff;
+        }
+
+        .hero-card p {
+            color: #8fa3bd;
+        }
+
+        /* ===== ABOUT ===== */
+
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            background: #0b1424;
+            border: 1px solid #1d3452;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .about-box p {
+            color: #b7c6d9;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .info-box {
+            background: #07101e;
+            border: 1px solid #172d48;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .info-box h4 {
+            color: #4da6ff;
+            margin-bottom: 7px;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #dce7f5;
+        }
+
+        /* ===== SKILLS ===== */
+
+        .skills {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+        }
+
+        .skill-name span:last-child {
+            color: #4da6ff;
+        }
+
+        .bar {
+            height: 10px;
+            background: #111e31;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #1677d2;
+            border-radius: 20px;
+        }
+
+        .html {
+            width: 80%;
+        }
+
+        .css {
+            width: 70%;
+        }
+
+        .js {
+            width: 50%;
+        }
+
+        .php {
+            width: 55%;
+        }
+
+        /* ===== PROJECTS ===== */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background: #0b1424;
+            border: 1px solid #1d3452;
+            border-radius: 16px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: #318de0;
+        }
+
+        .project-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .project h3 {
+            color: #4da6ff;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #8fa3bd;
+        }
+
+        /* ===== HOBBY ===== */
+
+        .hobby {
+            text-align: center;
+            background: #07101e;
+        }
+
+        .swim-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .hobby h2 {
+            color: #4da6ff;
+            margin-bottom: 10px;
+        }
+
+        .hobby p {
+            color: #aebed1;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* ===== CONTACT ===== */
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+            background: #0b1424;
+            border: 1px solid #1d3452;
+            border-radius: 18px;
+            padding: 35px;
+        }
+
+        .phone {
+            font-size: 25px;
+            color: #4da6ff;
+            margin: 20px 0;
+            direction: ltr;
+        }
+
+        .whatsapp {
+            background: #168c55;
+        }
+
+        .whatsapp:hover {
+            background: #20a866;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #17243a;
+            color: #71869f;
+            font-size: 14px;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media (max-width: 750px) {
+
+            nav {
+                padding: 14px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 70px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+
+            .hero-card {
+                width: 100%;
+                max-width: 330px;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">منير عماد</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">عني</a></li>
+            <li><a href="#skills">مهاراتي</a></li>
+            <li><a href="#projects">مشاريعي</a></li>
+            <li><a href="#contact">تواصل</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <div class="welcome">
+                👋 مرحباً، أنا
+            </div>
+
+            <h1>
+                <span>منير عماد</span>
+            </h1>
+
+            <h3>
+                💻 طالب تقنية المعلومات
+            </h3>
+
+            <p>
+                أهلاً بيك في موقعي الشخصي.
+                أنا طالب في مجال تقنية المعلومات،
+                مهتم بالتكنولوجيا والبرمجة وتطوير مهاراتي
+                وبناء مستقبلي في مجال الـ IT.
+            </p>
+
+            <a href="#about" class="btn">
+                اعرف عني أكثر
+            </a>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="hero-icon">
+                💻
+            </div>
+
+            <h2>
+                IT Student
+            </h2>
+
+            <p>
+                Information Technology
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>من أنا؟</h2>
+
+            <p>
+                نبذة بسيطة عني
+            </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <p>
+                أنا <strong>منير عماد</strong>،
+                طالب تقنية معلومات، وأسعى لتطوير نفسي
+                في مجال التكنولوجيا والبرمجة واكتساب
+                مهارات عملية تساعدني في مستقبلي المهني.
+            </p>
+
+
+            <div class="info">
+
+                <div class="info-box">
+                    <h4>🎓 التخصص</h4>
+                    <p>تقنية المعلومات</p>
+                </div>
+
+                <div class="info-box">
+                    <h4>🏊 الهواية</h4>
+                    <p>السباحة</p>
+                </div>
+
+                <div class="info-box">
+                    <h4>💻 الاهتمام</h4>
+                    <p>التكنولوجيا والبرمجة</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>مهاراتي</h2>
+
+            <p>
+                المهارات التي أتعلمها وأطورها
+            </p>
+
+        </div>
+
+
+        <div class="skills">
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>HTML</span>
+                    <span>80%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress html"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>CSS</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress css"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>50%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress js"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>PHP</span>
+                    <span>55%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress php"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>مشاريعي</h2>
+
+            <p>
+                بعض المشاريع والأفكار التي أعمل عليها
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+            <div class="project">
+
+                <div class="project-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Personal Profile
+                </h3>
+
+                <p>
+                    موقع شخصي تعريفي لعرض معلوماتي
+                    ومهاراتي واهتماماتي.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    💻
+                </div>
+
+                <h3>
+                    IT Learning
+                </h3>
+
+                <p>
+                    رحلة تعلم وتطوير مهاراتي في مجال
+                    تقنية المعلومات والبرمجة.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    🏊
+                </div>
+
+                <h3>
+                    My Hobby
+                </h3>
+
+                <p>
+                    صفحة بسيطة عن هوايتي المفضلة
+                    وهي السباحة.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOBBY -->
+
+    <section class="hobby">
+
+        <div class="swim-icon">
+            🏊‍♂️
+        </div>
+
+        <h2>
+            السباحة
+        </h2>
+
+        <p>
+            السباحة من الهوايات المفضلة عندي،
+            وهي بالنسبة لي طريقة للاستمتاع
+            وقضاء وقت جميل والمحافظة على النشاط.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>تواصل معي</h2>
+
+            <p>
+                يسعدني تواصلك معي
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <p>
+                📱 رقم الهاتف
+            </p>
+
+            <div class="phone">
+                0907910586
+            </div>
+
+            <a
+                href="https://wa.me/249907910586"
+                class="btn whatsapp"
+                target="_blank"
+            >
+                💬 تواصل عبر WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 منير عماد |
+        Information Technology
+
+    </footer>
+
+</body>
+</html>
